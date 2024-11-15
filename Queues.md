@@ -1,3 +1,98 @@
+# Properties
+  
+---
+
+1. **Enqueue followed by Dequeue gives back the same element**
+
+```math
+\forall x, Q: \quad \text{enqueue}(Q, x) \Rightarrow \text{dequeue}(\text{enqueue}(Q, x)) = x
+```
+
+---
+
+2. **Queue maintains FIFO (First In, First Out) order**
+
+```math
+\forall x, y, Q: \quad \text{enqueue}(\text{enqueue}(Q, x), y) \Rightarrow \text{dequeue}(\text{dequeue}(Q)) = x
+```
+
+---
+
+3. **Dequeue on an empty queue throws an exception (or returns a special value)**
+
+```math
+\forall Q: \quad \text{isEmpty}(Q) \Rightarrow \text{dequeue}(Q) = \text{exception} \quad \text{or} \quad \text{None}
+```
+
+---
+
+4. **Queue is empty after all elements have been dequeued**
+
+```math
+\forall Q: \quad \text{isEmpty}(\text{dequeue}(\text{dequeue}(\ldots \text{dequeue}(Q)))) = \text{True}
+```
+
+---
+
+5. **Enqueueing multiple elements does not change their relative order**
+
+```math
+\forall Q, x_1, x_2, \ldots, x_n: \quad \text{enqueue}(Q, x_1), \text{enqueue}(Q, x_2), \ldots, \text{enqueue}(Q, x_n)
+```
+```math
+\Rightarrow \quad \text{dequeue}(\text{dequeue}(\ldots \text{dequeue}(Q))) = (x_1, x_2, \ldots, x_n)
+```
+
+---
+
+6. **Queue size increases after enqueue and decreases after dequeue**
+
+```math
+\forall Q, x: \quad \text{size}(\text{enqueue}(Q, x)) = \text{size}(Q) + 1
+```
+```math
+\forall Q: \quad \text{size}(\text{dequeue}(Q)) = \text{size}(Q) - 1 \quad \text{if} \ \text{size}(Q) > 0
+```
+
+---
+
+7. **Queue remains unchanged after enqueueing and immediately dequeuing the same element**
+
+```math
+\forall x, Q: \quad \text{enqueue}(\text{dequeue}(\text{enqueue}(Q, x)), x) = Q
+```
+
+---
+
+8. **Queue behaves like a sequence, meaning it has an invariant length through enqueues and dequeues**
+
+```math
+\forall Q, x: \quad \text{size}(\text{enqueue}(Q, x)) \leq \text{size}(Q) + 1
+```
+```math
+\forall Q: \quad \text{size}(\text{dequeue}(Q)) \geq \text{size}(Q) - 1
+```
+
+---
+
+9. **The queue should not accept `None` or invalid values (if applicable)**
+
+```math
+\forall Q: \quad \text{enqueue}(Q, \text{None}) = \text{exception} \quad \text{or} \quad \text{enqueue}(Q, \text{invalid}) = \text{exception}
+```
+
+---
+
+10. **Queue is immutable in terms of size after it is emptied and not refilled**
+
+```math
+\forall Q: \quad \text{isEmpty}(Q) \Rightarrow \text{dequeue}(Q) = \text{None}
+```
+
+---
+
+## Example Property Tests
+
 To convert the above properties into Python code using **property-based testing** with the **Hypothesis** library, we will:
 
 - Define a **Queue class** with basic operations: `enqueue`, `dequeue`, `is_empty`, and `size`.
@@ -175,99 +270,3 @@ pytest queue_properties_test.py
 ```
 
 Hypothesis will automatically generate test cases and check the properties for various inputs. If any property fails, Hypothesis will provide a minimal failing case for you to debug.
-
-# Properties
-
-<details>
-  
-
----
-
-1. **Enqueue followed by Dequeue gives back the same element**
-
-```math
-\forall x, Q: \quad \text{enqueue}(Q, x) \Rightarrow \text{dequeue}(\text{enqueue}(Q, x)) = x
-```
-
----
-
-2. **Queue maintains FIFO (First In, First Out) order**
-
-```math
-\forall x, y, Q: \quad \text{enqueue}(\text{enqueue}(Q, x), y) \Rightarrow \text{dequeue}(\text{dequeue}(Q)) = x
-```
-
----
-
-3. **Dequeue on an empty queue throws an exception (or returns a special value)**
-
-```math
-\forall Q: \quad \text{isEmpty}(Q) \Rightarrow \text{dequeue}(Q) = \text{exception} \quad \text{or} \quad \text{None}
-```
-
----
-
-4. **Queue is empty after all elements have been dequeued**
-
-```math
-\forall Q: \quad \text{isEmpty}(\text{dequeue}(\text{dequeue}(\ldots \text{dequeue}(Q)))) = \text{True}
-```
-
----
-
-5. **Enqueueing multiple elements does not change their relative order**
-
-```math
-\forall Q, x_1, x_2, \ldots, x_n: \quad \text{enqueue}(Q, x_1), \text{enqueue}(Q, x_2), \ldots, \text{enqueue}(Q, x_n)
-```
-```math
-\Rightarrow \quad \text{dequeue}(\text{dequeue}(\ldots \text{dequeue}(Q))) = (x_1, x_2, \ldots, x_n)
-```
-
----
-
-6. **Queue size increases after enqueue and decreases after dequeue**
-
-```math
-\forall Q, x: \quad \text{size}(\text{enqueue}(Q, x)) = \text{size}(Q) + 1
-```
-```math
-\forall Q: \quad \text{size}(\text{dequeue}(Q)) = \text{size}(Q) - 1 \quad \text{if} \ \text{size}(Q) > 0
-```
-
----
-
-7. **Queue remains unchanged after enqueueing and immediately dequeuing the same element**
-
-```math
-\forall x, Q: \quad \text{enqueue}(\text{dequeue}(\text{enqueue}(Q, x)), x) = Q
-```
-
----
-
-8. **Queue behaves like a sequence, meaning it has an invariant length through enqueues and dequeues**
-
-```math
-\forall Q, x: \quad \text{size}(\text{enqueue}(Q, x)) \leq \text{size}(Q) + 1
-```
-```math
-\forall Q: \quad \text{size}(\text{dequeue}(Q)) \geq \text{size}(Q) - 1
-```
-
----
-
-9. **The queue should not accept `None` or invalid values (if applicable)**
-
-```math
-\forall Q: \quad \text{enqueue}(Q, \text{None}) = \text{exception} \quad \text{or} \quad \text{enqueue}(Q, \text{invalid}) = \text{exception}
-```
-
----
-
-10. **Queue is immutable in terms of size after it is emptied and not refilled**
-
-```math
-\forall Q: \quad \text{isEmpty}(Q) \Rightarrow \text{dequeue}(Q) = \text{None}
-```
-
-</details>
