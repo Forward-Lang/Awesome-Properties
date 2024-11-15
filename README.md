@@ -16,6 +16,11 @@ Property testing is a powerful technique to help you ensure your code behaves co
   - [More Tests](#more-tests)
 - [Popular Property Testing Libraries](#popular-property-testing-libraries)
 
+## Contributing
+
+We welcome contributions to this repository! 
+Please read the [contribution guidelines](CONTRIBUTING.md) first, and follow the steps writen there.
+
 ## What is Property Testing
 
 Property testing is a technique where you define general properties (invariants) about your program, and then the testing framework generates random inputs to check whether the properties hold true. 
@@ -28,11 +33,6 @@ For example, when testing a queue, a property might be that the size of the queu
 - **Automates Edge Case Discovery**: Property tests generate a wide range of input values, which often uncovers edge cases that you wouldn't think of manually.
 - **Helps Prove Correctness**: If a property test passes for all generated inputs, it helps give you confidence that your code behaves as expected across many scenarios.
 - **Improves Code Quality**: Property testing encourages writing more general and robust code that handles a variety of situations, rather than specific predefined cases.
-
-## Contributing
-
-We welcome contributions to this repository! 
-Please read the [contribution guidelines](CONTRIBUTING.md) first, and follow the steps writen there.
 
 ## Property Tests
 
