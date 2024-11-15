@@ -48,7 +48,7 @@ We welcome contributions to this repository! If you have a property test to add,
 
 ### Reporting Issues
 
-If you encounter any broken tests or have suggestions for additional properties to test, feel free to [open an issue](https://github.com/yourusername/awesome-property-testing/issues). We're always looking for ways to improve the repository.
+If you encounter any broken tests or have suggestions for additional properties to test, feel free to [open an issue](https://github.com/Forward-Lang/awesome-property-testing/issues). We're always looking for ways to improve the repository.
 
 ## Property Tests
 
