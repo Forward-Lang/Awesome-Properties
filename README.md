@@ -12,10 +12,9 @@ Unlike traditional unit tests, which test specific scenarios, property tests exp
 
 For example, when testing a queue, a property might be that the size of the queue never goes negative after enqueue and dequeue operations, or that the first item dequeued is always the first one enqueued (FIFO).
 
-## Table of Contents
+## Contents
 
 - [Why Property Testing?](#why-property-testing)
-- [Contributing](#contributing)
 - [Property Tests](#property-tests)
   - [Queues](#queues)
   - [Lists](#lists)
@@ -106,7 +105,3 @@ Here are some popular property testing libraries that can help you get started i
 - **[Test.check](https://github.com/clojure/test.check)** - Clojure
 
 Feel free to contribute any other libraries you use for property testing!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
