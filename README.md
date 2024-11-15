@@ -16,14 +16,14 @@ Property testing is a powerful technique to help you ensure your code behaves co
   - [More Tests](#more-tests)
 - [Popular Property Testing Libraries](#popular-property-testing-libraries)
 
-## What is Property Testing?
+## What is Property Testing
 
 Property testing is a technique where you define general properties (invariants) about your program, and then the testing framework generates random inputs to check whether the properties hold true. 
 Unlike traditional unit tests, which test specific scenarios, property tests explore a broader set of possible inputs, including edge cases, and often find bugs that you might not have considered.
 
 For example, when testing a queue, a property might be that the size of the queue never goes negative after enqueue and dequeue operations, or that the first item dequeued is always the first one enqueued (FIFO).
 
-## Why Property Testing?
+## Why Property Testing
 
 - **Automates Edge Case Discovery**: Property tests generate a wide range of input values, which often uncovers edge cases that you wouldn't think of manually.
 - **Helps Prove Correctness**: If a property test passes for all generated inputs, it helps give you confidence that your code behaves as expected across many scenarios.
@@ -31,23 +31,8 @@ For example, when testing a queue, a property might be that the size of the queu
 
 ## Contributing
 
-We welcome contributions to this repository! If you have a property test to add, follow these steps:
-
-1. **Fork the repository** and clone it to your local machine.
-2. **Add a new property test**: Create a new `.md` file under the `property-tests` directory. Add tests relevant to the data structure or algorithm you're targeting.
-3. **Follow best practices**: Ensure that your property tests are written in a clear, understandable format. See the existing tests for examples.
-4. **Submit a pull request**: Once you've added your test(s), open a pull request with a brief description of your changes.
-5. **Test your code**: If applicable, provide links to the relevant property testing framework or language-specific tools used to verify your tests.
-
-### Best Practices
-
-- **Keep tests simple**: Focus on one property per test.
-- **Provide clear explanations**: Describe the property you're testing and the reasoning behind it.
-- **Document the tool or framework**: If your property test requires a specific framework, be sure to mention it.
-
-### Reporting Issues
-
-If you encounter any broken tests or have suggestions for additional properties to test, feel free to [open an issue](https://github.com/Forward-Lang/awesome-property-testing/issues). We're always looking for ways to improve the repository.
+We welcome contributions to this repository! 
+Please read the [contribution guidelines](CONTRIBUTING.md) first, and follow the steps writen there.
 
 ## Property Tests
 
