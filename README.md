@@ -1,4 +1,5 @@
 # Awesome Property Testing
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 A curated collection of property tests for various data structures, algorithms, and properties.
 This repository aims to provide a comprehensive set of property-based tests across different programming languages, frameworks, and domains.
