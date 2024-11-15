@@ -1,19 +1,12 @@
-# Awesome Property Testing
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Property Testing [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 A curated collection of property tests for various data structures, algorithms, and properties.
 This repository aims to provide a comprehensive set of property-based tests across different programming languages, frameworks, and domains.
 Property testing is a powerful technique to help you ensure your code behaves correctly under a wide range of conditions by automatically generating input values and testing the properties of your code.
 
-## What is Property Testing?
-
-Property testing is a technique where you define general properties (invariants) about your program, and then the testing framework generates random inputs to check whether the properties hold true. 
-Unlike traditional unit tests, which test specific scenarios, property tests explore a broader set of possible inputs, including edge cases, and often find bugs that you might not have considered.
-
-For example, when testing a queue, a property might be that the size of the queue never goes negative after enqueue and dequeue operations, or that the first item dequeued is always the first one enqueued (FIFO).
-
 ## Contents
 
+- [What is Property Testing?](#what-is-property-testing)
 - [Why Property Testing?](#why-property-testing)
 - [Property Tests](#property-tests)
   - [Queues](#queues)
@@ -22,7 +15,13 @@ For example, when testing a queue, a property might be that the size of the queu
   - [Numbers](#numbers)
   - [More Tests](#more-tests)
 - [Popular Property Testing Libraries](#popular-property-testing-libraries)
-- [License](#license)
+
+## What is Property Testing?
+
+Property testing is a technique where you define general properties (invariants) about your program, and then the testing framework generates random inputs to check whether the properties hold true. 
+Unlike traditional unit tests, which test specific scenarios, property tests explore a broader set of possible inputs, including edge cases, and often find bugs that you might not have considered.
+
+For example, when testing a queue, a property might be that the size of the queue never goes negative after enqueue and dequeue operations, or that the first item dequeued is always the first one enqueued (FIFO).
 
 ## Why Property Testing?
 
